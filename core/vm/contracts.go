@@ -26,6 +26,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/crypto/bn256"
 	"github.com/ethereum/go-ethereum/params"
+	"github.com/guanyg/ABEOutsourcingVerify/verifier"
 	"golang.org/x/crypto/ripemd160"
 )
 
@@ -57,6 +58,7 @@ var PrecompiledContractsByzantium = map[common.Address]PrecompiledContract{
 	common.BytesToAddress([]byte{6}): &bn256Add{},
 	common.BytesToAddress([]byte{7}): &bn256ScalarMul{},
 	common.BytesToAddress([]byte{8}): &bn256Pairing{},
+	common.BytesToAddress([]byte{9}): &verifier.ABEOutsourcingVerify{},
 }
 
 // RunPrecompiledContract runs and evaluates the output of a precompiled contract.
